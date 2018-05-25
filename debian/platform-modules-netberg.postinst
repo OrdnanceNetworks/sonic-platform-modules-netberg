@@ -1,0 +1,19 @@
+# postinst script for Netberg devices
+
+#DEBHELPER#
+
+# Update module dependencies
+depmod -a
+
+# Load hardware monitoring modules
+modprobe -q i2c-i801 ||:
+modprobe -q i2c-isch ||:
+modprobe -q i2c-ismt ||:
+modprobe -q i2c-dev ||:
+modprobe -q i2c-mux ||:
+modprobe -q i2c-smbus ||:
+
+modprobe -q i2c-mux-gpio ||:
+modprobe -q i2c-mux-pca954x ||:
+
+modprobe -q hardware_monitor ||:
