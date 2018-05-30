@@ -2,10 +2,21 @@
 
 #DEBHELPER#
 
+# Unload modules required for hardware monitoring
+modprobe -q -r i2c-mux-pca954x ||:
+modprobe -q -r i2c-mux-gpio ||:
+
+modprobe -q -r i2c-smbus ||:
+modprobe -q -r i2c-mux ||:
+modprobe -q -r i2c-dev ||:
+modprobe -q -r i2c-ismt ||:
+modprobe -q -r i2c-isch ||:
+modprobe -q -r i2c-i801 ||:
+
 # Update module dependencies
 depmod -a
 
-# Load hardware monitoring modules
+# Load modules required for hardware monitoring
 modprobe -q i2c-i801 ||:
 modprobe -q i2c-isch ||:
 modprobe -q i2c-ismt ||:
@@ -16,4 +27,5 @@ modprobe -q i2c-smbus ||:
 modprobe -q i2c-mux-gpio ||:
 modprobe -q i2c-mux-pca954x ||:
 
+# Load hardware monitoring module
 modprobe -q hardware_monitor ||:
