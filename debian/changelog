@@ -1,3 +1,9 @@
+sonic-platform-netberg (0.4) unstable; urgency=low
+
+  * Bump version to 0.4 due to fixes presented earlier
+
+ -- Sergey Popovich <sergey.popovich@ordnance.co>  Thu, 09 Aug 2018 16:23:13 +0300
+
 sonic-platform-netberg (0.3) unstable; urgency=low
 
   * Initial release
